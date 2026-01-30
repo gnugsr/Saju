@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>운명: 사주풀이 (Destiny Saju)</title>
+    <meta name="description" content="당신의 운명을 확인하세요. 정통 사주풀이 서비스.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+KR:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/korean-lunar-calendar/dist/korean-lunar-calendar.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-effects">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="nebula"></div>
+    </div>
+
+    <main class="container">
+        <header class="main-header">
+            <h1 class="fade-in">운명 (運命)</h1>
+            <p class="subtitle fade-in-delay">하늘의 이치를 읽다</p>
+        </header>
+
+        <section class="card logic-card fade-in-up">
+            <form id="sajuForm">
+                <div class="form-group">
+                    <label for="birthDate">생년월일</label>
+                    <input type="date" id="birthDate" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="birthTime">태어난 시간</label>
+                        <input type="time" id="birthTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">성별</label>
+                        <select id="gender" required>
+                            <option value="male">남성 (乾)</option>
+                            <option value="female">여성 (坤)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="isLunar">
+                    <label for="isLunar">음력 (Lunar)</label>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <span>운세 보기</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </form>
+        </section>
+
+        <section id="resultSection" class="result-section hidden">
+            <div class="card result-card">
+                <h2>당신의 사주팔자</h2>
+                <div class="pillars-container">
+                    <div class="pillar">
+                        <span class="pillar-label">시주 (Time)</span>
+                        <div class="pillar-content">
+                            <span class="gan" id="hourGan">?</span>
+                            <span class="ji" id="hourJi">?</span>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <span class="pillar-label">일주 (Day)</span>
+                        <div class="pillar-content">
+                            <span class="gan" id="dayGan">?</span>
+                            <span class="ji" id="dayJi">?</span>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <span class="pillar-label">월주 (Month)</span>
+                        <div class="pillar-content">
+                            <span class="gan" id="monthGan">?</span>
+                            <span class="ji" id="monthJi">?</span>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <span class="pillar-label">년주 (Year)</span>
+                        <div class="pillar-content">
+                            <span class="gan" id="yearGan">?</span>
+                            <span class="ji" id="yearJi">?</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="analysis-text" id="analysisText">
+                    <!-- Text analysis will appear here -->
+                </div>
+                <button id="resetBtn" class="btn-reset">다시 하기</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
